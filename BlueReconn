@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# changes to current working dir to ./src/ dir
+cd "$(dirname "$0")/src"
+
+python3 BlueReconn.py
