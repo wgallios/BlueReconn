@@ -2,7 +2,7 @@
 module.exports = {
     all: {
         options: {
-            'nempty': false,
+            'noempty': false,
             'evil': true,
             'sub': true,
             'proto': true
