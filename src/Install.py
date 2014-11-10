@@ -25,14 +25,16 @@ class Install(controller.CementBaseController):
 
     def _copyDaemon(self):
         print("Installing Bluetooth Reconn Daemon ...")
-        
+
         check = self._checkDaemon()
-        
+
         if not check:
             # copies over daemon
             shutil.copyfile(self.daemonLocal, self.daemonFile)
+            self._setDaemonPermissions();
             print('Done')
         else:
+            print('Fail: keyboard service already exists')
             sys.exit(1);
 
         return True;
@@ -47,5 +49,10 @@ class Install(controller.CementBaseController):
         else:
             return False
 
+    # sets permissions of files
+    def _setDaemonPermissions(self):
+        if self.app.pargs.debug
+            print('Setting permissions for daemon file')
 
+        os.chmod(self.daemonFile, 0o744)
 
