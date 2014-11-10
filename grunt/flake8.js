@@ -2,7 +2,7 @@
 module.exports = {
     options: {
     },
-    srcs: {
-        src: 'src/**/*.py'
-    }
+    src: [
+        'src/**/*.py'
+    ]
 };

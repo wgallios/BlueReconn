@@ -2,9 +2,9 @@
 module.exports = {
     'default': [
         'clean',
-        'pylint'
+        'flake8'
     ],
     'lint': [
-        'pylint'
+        'flake8'
     ]
 };
