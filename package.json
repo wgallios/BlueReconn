@@ -1,0 +1,35 @@
+{
+  "name": "BlueReconn",
+  "version": "0.0.1",
+  "description": "Bluetooth Reconnection",
+  "main": "bluereconn",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wgallios/BlueReconn.git"
+  },
+  "keywords": [
+    "Ubuntu",
+    "bluetooth",
+    "keyboard",
+    "reconnnect"
+  ],
+  "author": "William Gallios <williamgallios@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wgallios/BlueReconn/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-bump": "0.0.16",
+    "grunt-pylint": "~0.4.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-cli": "~0.1.13",
+    "load-grunt-config": "~0.16.0",
+    "time-grunt": "~1.0.0"
+  }
+}
