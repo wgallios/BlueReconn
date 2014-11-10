@@ -1,6 +1,6 @@
 module.exports = {
     options: {
-        files: ['package.json'],
+        files: ['package.json', 'config'],
         updateConfigs: [],
         commit: true,
         commitMessage: "Release v%VERSION%",

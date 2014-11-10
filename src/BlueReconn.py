@@ -1,10 +1,12 @@
-
-from cement.core import backend, foundation, hook, handler
-from cement.utils.misc import init_defaults
+from cement.core import foundation, handler
 
 import sys
 import os
-import baseController, Install
+
+import baseController
+import Install
+import Config
+import Bluetooth
 
 if os.getuid() == 0:
     try:
@@ -12,6 +14,8 @@ if os.getuid() == 0:
 
         handler.register(baseController.baseController)
         handler.register(Install.Install)
+        handler.register(Config.Config)
+        handler.register(Bluetooth.Bluetooth)
 
         app.setup()
 

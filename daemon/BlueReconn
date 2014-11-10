@@ -1,0 +1,12 @@
+#! /bin/bash
+
+address="AA:BB:CC:DD:EE:FF"
+
+while (sleep 1)
+do
+    connected=`sudo hidd --show` > /dev/null
+
+    if [[ ! $connected =~ .*${address}.* ]] ; then
+        sudo hidd --connect ${address} > /dev/null 2>&1
+    fi
+done

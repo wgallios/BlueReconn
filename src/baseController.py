@@ -1,4 +1,5 @@
-from cement.core import backend, foundation, handler, hook, controller
+from cement.core import controller
+
 
 class baseController(controller.CementBaseController):
     class Meta:
@@ -7,8 +8,10 @@ class baseController(controller.CementBaseController):
         description = 'Bluetooth Reconnection'
 
         config_defaults = {}
-        arguments = []
+        arguments = [
+            (['-r', '--remove'], dict(action='store_true', help='Remove bluetooth device'))
+            ]
 
     @controller.expose(hide=True, aliases=['run'])
     def default(self):
-        print("default function")
+        print("BlueReconn"),
