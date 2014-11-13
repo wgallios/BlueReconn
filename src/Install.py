@@ -7,11 +7,17 @@ import os
 
 
 class Install(controller.CementBaseController):
+
+    binName = 'bluereconn' # bin name
     daemonLocal = '../daemon/BlueReconn'
     daemonFile = '/etc/init.d/BlueReconn'
     configPath = '/etc/BlueReconn'
     configFile = 'BlueReconn.conf'
     configLocal = '../daemon/BlueReconn.conf'
+
+    cwd = os.path.dirname(os.path.realpath(__file__))
+    baseDir = os.path.dirname(cwd)
+
 
     class Meta:
         interface = controller.IController
@@ -20,6 +26,11 @@ class Install(controller.CementBaseController):
         stacked_on = 'base'
 
     def default(self):
+
+        # if os self.app.pargs.bin:
+            # if not dircheck.endswith(os.sep):
+
+
         pass
 
     @controller.expose(help='Install Bluetooth connection daemon')
@@ -85,13 +96,26 @@ class Install(controller.CementBaseController):
     # copies over new config file
     def _copyConfig(self):
         print("Copying config file")
-        shutil.copyfile(self.configLocal, self.configPath + '/' + self.configFile)
+        shutil.copyfile(self.configLocal, self.configPath + os.pathsep + self.configFile)
 
     # backs up existing config file in /etc/bluetooth
     def _backupConfig(self):
         if self.app.pargs.debug:
             print("Backing up config file %s/%s" % (self.configPath, self.configFile))
 
-        shutil.move(self.configPath + '/' + self.configFile, self.configPath + '/' + self.configFile + '.bak')
+        shutil.move(self.configPath + os.pathsep + self.configFile, self.configPath + os.pathsep + self.configFile + '.bak')
 
         return True
+
+    # creates symlink for bluereconn executable 
+    def createBin(self):
+
+        # bin =
+
+        # first checks if file exists, if so, removes it
+        if os.path.isFile():
+            os.remove()
+
+        os.symlink(cwd + os.pathsep +  binName ,'/usr/local/bin/' + binName)
+        
+

@@ -9,6 +9,7 @@ import Config
 import Bluetooth
 
 if os.getuid() == 0:
+
     try:
         app = foundation.CementApp('BlueReconn')
 

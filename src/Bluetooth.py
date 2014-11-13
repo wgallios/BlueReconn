@@ -1,6 +1,6 @@
 from cement.core import controller
 import bluetooth
-import pprint
+# import pprint
 
 class Bluetooth(controller.CementBaseController):
     class Meta:

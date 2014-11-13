@@ -3,7 +3,7 @@ import Bluetooth
 import pprint
 
 class Config(controller.CementBaseController):
-    Bluetooth = Bluetooth.Bluetooth()
+    # Bluetooth = Bluetooth.Bluetooth()
     class Meta:
         interface = controller.IController
         label = 'config'
@@ -16,6 +16,5 @@ class Config(controller.CementBaseController):
     @controller.expose(help='Scan, setup, and configure bluetooth devices')
     def config(self):
         print("Starting config process")
-
         # pprint.pprint(vars(Bluetooth))
-        self.Bluetooth.scan()
+        # self.Bluetooth.scan()
