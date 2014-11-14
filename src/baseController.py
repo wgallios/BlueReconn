@@ -15,4 +15,4 @@ class baseController(controller.CementBaseController):
 
     @controller.expose(hide=True, aliases=['run'])
     def default(self):
-        print("BlueReconn")
+        print("Try 'bluereconn --help' for more information")
