@@ -1,5 +1,5 @@
 from cement.core import controller
-
+from colorama import init, Fore, Back, Style
 
 class baseController(controller.CementBaseController):
     class Meta:
@@ -15,4 +15,4 @@ class baseController(controller.CementBaseController):
 
     @controller.expose(hide=True, aliases=['run'])
     def default(self):
-        print("Try 'bluereconn --help' for more information")
+        print(Style.BRIGHT + "Try 'bluereconn --help' for more information" + Style.RESET_ALL)
