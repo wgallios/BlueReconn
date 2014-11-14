@@ -8,21 +8,27 @@ import Install
 import Config
 import Bluetooth
 
-if os.getuid() == 0:
+class BlueReconn:
 
-    try:
-        app = foundation.CementApp('BlueReconn')
+    def init(self):
+        pass
 
-        handler.register(baseController.baseController)
-        handler.register(Install.Install)
-        handler.register(Config.Config)
-        handler.register(Bluetooth.Bluetooth)
+    def run(self):
+        if os.getuid() == 0:
 
-        app.setup()
+            try:
+                app = foundation.CementApp('BlueReconn')
 
-        app.run()
-    finally:
-        app.close()
-else:
-    print("Permission denied, please run as sudo")
-    sys.exit(0)
+                handler.register(baseController.baseController)
+                handler.register(Install.Install)
+                handler.register(Config.Config)
+                handler.register(Bluetooth.Bluetooth)
+
+                app.setup()
+
+                app.run()
+            finally:
+                app.close()
+        else:
+            print("Permission denied, please run as sudo")
+            sys.exit(0)
