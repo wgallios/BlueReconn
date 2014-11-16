@@ -14,7 +14,7 @@ class BlueReconn:
         pass
 
     def run(self):
-        if os.getuid() == 0:
+        # if os.getuid() == 0:
 
             try:
                 app = foundation.CementApp('BlueReconn')
@@ -29,6 +29,6 @@ class BlueReconn:
                 app.run()
             finally:
                 app.close()
-        else:
-            print("Permission denied, please run as sudo")
-            sys.exit(0)
+        # else:
+            # print("Permission denied, please run as sudo")
+            # sys.exit(0)
