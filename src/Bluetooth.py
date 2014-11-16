@@ -27,3 +27,6 @@ class Bluetooth(controller.CementBaseController):
             cnt = cnt + 1
 
         hid = input("Please enter device Hardware ID: ")
+
+    def connect(self):
+        print("Connecting to device")

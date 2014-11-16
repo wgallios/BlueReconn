@@ -10,7 +10,7 @@ class baseController(controller.CementBaseController):
         config_defaults = {}
         arguments = [
             (['-r', '--remove'], dict(action='store_true', help='Remove bluetooth device')),
-            (['-b', '--bin'], dict(action='store_true', help='path to bin folder (Example: /usr/local/bin)'))
+            (['-b', '--bin'], dict(action='store', help='path to bin folder (Example: /usr/local/bin)'))
             ]
 
     @controller.expose(hide=True, aliases=['run'])
